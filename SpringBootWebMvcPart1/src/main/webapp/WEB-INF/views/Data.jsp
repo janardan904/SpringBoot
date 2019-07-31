@@ -30,6 +30,7 @@
 			<td><c:out value="${ob.note}"/> </td>
 			<td>
 				<a href="delete?id=${ob.id}">DELETE</a>
+				<a href="edit?id=${ob.id}">EDIT</a>
 			</td>
 		</tr>
 	</c:forEach>

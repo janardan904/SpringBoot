@@ -51,4 +51,12 @@ public class ProductController {
 		service.deleteProduct(id);
 		return"redirect:all";
 	}
+	@RequestMapping(value="/edit")
+	public String showEdit(@RequestParam Integer id, Model map) {
+	Product p=service.getProductById(id);
+		
+		map.addAttribute("product ",p);
+		map.addAttribute("Mode","EDIT");
+		return"Register";
+	}
 }

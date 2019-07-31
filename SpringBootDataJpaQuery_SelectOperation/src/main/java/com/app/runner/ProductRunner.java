@@ -17,7 +17,6 @@ public class ProductRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		repo.save(new Product(100,"A", "abc", "xyz", 3.4));
 		repo.save(new Product(101,"G", "apd", "gfh", 3.3));
 		repo.save(new Product(102,"B", "ahc", "xuz", 4.5));
 		repo.save(new Product(103,"F", "jkl", "xyz", 8.4));

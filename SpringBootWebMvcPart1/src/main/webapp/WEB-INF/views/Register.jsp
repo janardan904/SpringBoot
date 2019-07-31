@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"
-    isELIgnored="false"
-    %>
+    pageEncoding="ISO-8859-1"isELIgnored="false"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <!DOCTYPE html>
 <html>
@@ -13,6 +11,11 @@
 <h3 style=color:red;text-aligen:center>WELCOME TO PRODUCT REGISTER</h3>
 <form:form action="save" method="POST" modelAttribute="product">
 <pre>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:if test="${'EDIT'eq Mode}">
+ID:<form:input path="id" readonly="true"/>
+</c:if>
+
  CODE  : <form:input path="code"/>
  NAME  : <form:input path="name"/>
  COST  : <form:input path="cost"/>
@@ -25,9 +28,16 @@
  		</form:select> 
  NOTE : <form:textarea path="note"/>
  
-   <input type="submit" value="CREATE PRODUCT"/> 		
+   <c:choose>
+   <c:when test="${'EDIT'eq Mode }">
+   <input type="submit" value="UPDATE PRODUCT"/>
+   </c:when>
+   <c:otherwise>
+   <input type="submit" value="CREATE PRODUCT">
+   </c:otherwise>
+   </c:choose>		
 </pre>
 </form:form>
 ${message}
 </body>
-</html>
+</html>/

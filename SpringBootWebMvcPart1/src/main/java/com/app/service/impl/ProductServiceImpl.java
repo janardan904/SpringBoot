@@ -31,8 +31,17 @@ public class ProductServiceImpl implements ProductService {
 
 	@Transactional
 	public void deleteProduct(Integer id) {
-	repo.deleteById(id);
-		
+	repo.deleteById(id);	
 	}
+
+@Transactional
+	public Product getProductById(Integer id) {
+		repo.findById(id);
+		return null;
+		
+
+	}
+
+	
 
 }
